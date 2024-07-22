@@ -3300,3 +3300,15 @@ input, select, textarea {
 				}
 
 	}
+	.project {
+		border: 1px solid #ddd;
+		padding: 1em;
+		margin-bottom: 1em;
+	}
+	.project h3 {
+		margin-top: 0;
+	}
+	.project p {
+		margin: 0.5em 0;
+	}
+	

@@ -5,12 +5,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 	</head>
+
 	<body class="is-preload">
 
 		<!-- Header -->
 			<div id="header">
-				<span class="logo icon fa-paper-plane"></span>
+				<span class="logo icon material-symbols-outlined">
+					code
+					</span>
 				<h1>Hola. Soy Patricio.</h1>
 				<p>Actualmente soy QA Funcional en  <a href="http://geovictoria.com">Geovictoria</a>
 				<br />
@@ -49,7 +53,14 @@
 						</header>
 						<blockquote>Se dan soluciones a requerimientos web como: Mantenciones a web sin soporte, Creaciones web con tecnologias: <i>HTML5</i>-<i>CSS3</i>-<i>JS</i>-<i>PHP</i>, y web creadas con tecnologias cms como: <i>wordpress</i>, <i>shopify</i> a las cuales se implementan integraciones como: <i>Transbank</i>, <i>MercadoPago</i>, <i>Getnet</i> </blockquote>
 					</section>
-
+					<section id="projects">
+						<h2>Repos Vinvulados</h2>
+						<div class="project">
+							<div id="gh-widget-2"></div>
+							<div id="gh-widget-3"></div>
+							<div id="gh-widget-4"></div>
+						</div>
+					</section>
 					<section>
 						<header>
 							<h3>Jefe de Proyecto y Frontend </h3>
@@ -58,6 +69,13 @@
 						</header>
 						<blockquote>Se crea una solucion informatica para un backoffice el cual se buscaba obtener estadisticas,gestionar documentos,umbrales de notificaciones y sobre todo gestionar usuarios, de este proyecto solo queda el codigo fuente dado que a fines del 2023 se decidio no seguir con el proyecto.<br>
 						Este proyecto fue creado con tecnologias web como: <i>Django</i>/<i>Postgress</i>/ <i>Redis</i>/ <i>HTML5</i>/ <i>CSS3</i>/ <i>JS</i> y Desplegado con <b>DigitalOceans</b></blockquote>
+					</section>
+					<section id="projects">
+						<h2>Repo Vinculado</h2>
+						<div class="project">
+							<div id="gh-widget-1"></div>
+						</div>
+						<!-- Puedes añadir más proyectos de manera similar -->
 					</section>
 				</div>
 
@@ -208,9 +226,9 @@
 				<!--Imagenes entrelazadas-->
 				<!-- <div class="box alt container">
 					<section class="feature left">
-						<a href="#" class="image icon solid fa-signal"><img src="images/pic01.jpg" alt="" /></a>
+						<a href="#" class="image icon solid fa-code"><img src="images/pic01.jpg" alt="" /></a>
 						<div class="content">
-							<h3>The First Thing</h3>
+							<h3>Desarrollo</h3>
 							<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
 						</div>
 					</section>
@@ -249,7 +267,7 @@
 
 					<p></p>
 
-					<form method="post" action="#">
+					<form method="post" action="enviarform.php">
 						<div class="row">
 							<div class="col-6 col-12-mobilep">
 								<input type="text" name="name" placeholder="Nombre" />
@@ -287,6 +305,31 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+			<script>
+				function createGitHubWidget(elementId, user, repo) {
+					var apiUrl = `https://api.github.com/repos/${user}/${repo}`;
+					fetch(apiUrl)
+						.then(response => response.json())
+						.then(data => {
+							var container = document.getElementById(elementId);
+							container.innerHTML = `
+								<h3><a href="${data.html_url}" target="_blank">${data.name}</a></h3>
+								<p style="text-align:center;">${data.description}<br>
+								⭐ ${data.stargazers_count} | 🍴 ${data.forks_count}</p>
+								
+							`;
+						})
+						.catch(error => console.error('Error fetching repository data:', error));
+				}
+			
+				createGitHubWidget('gh-widget-1', 'patriciomelor', 'Proyecto-plannit');
+				createGitHubWidget('gh-widget-2', 'patriciomelor', 'FSS');
+				createGitHubWidget('gh-widget-3', 'patriciomelor', 'Abogadosys.cl');
+				createGitHubWidget('gh-widget-4', 'patriciomelor', 'SysSeguros');
+			</script>
+
 
 	</body>
 </html>
