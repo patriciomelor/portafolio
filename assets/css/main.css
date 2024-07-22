@@ -3312,3 +3312,38 @@ input, select, textarea {
 		margin: 0.5em 0;
 	}
 	
+
+	.progress {
+		background-color: #f3f3f3;
+		border-radius: 13px;
+		padding: 3px;
+		margin-bottom: 10px;
+	  }
+	  
+	  .progress-bar {
+		background-color: #4caf50;
+		width: 0;
+		height: 20px;
+		border-radius: 10px;
+		text-align: center;
+		color: white;
+		line-height: 20px; /* Center the text vertically */
+	  }
+	  
+	  /* Additional styles for different color bars */
+	  .progress-bar.bg-success {
+		background-color: #4caf50;
+	  }
+	  
+	  .progress-bar.bg-info {
+		background-color: #2196f3;
+	  }
+	  
+	  .progress-bar.bg-warning {
+		background-color: #ff9800;
+	  }
+	  
+	  .progress-bar.bg-danger {
+		background-color: #f44336;
+	  }
+	  

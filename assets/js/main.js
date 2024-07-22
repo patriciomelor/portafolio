@@ -27,3 +27,16 @@
 		});
 
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", function () {
+	var progressBars = document.querySelectorAll('.progress-bar');
+
+	progressBars.forEach(function (bar) {
+		var width = bar.style.width;
+		bar.style.width = '0%';
+
+		setTimeout(function () {
+			bar.style.width = width;
+		}, 500);
+	});
+});
